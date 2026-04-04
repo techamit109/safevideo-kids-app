@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Be_Vietnam_Pro:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary-dim": "#00595f",
+              "surface-dim": "#ced6d6",
+              "surface-container": "#e4e9e9",
+              "on-error-container": "#570008",
+              "on-surface": "#2b3030",
+              "primary-fixed": "#91ebf4",
+              "on-secondary-fixed": "#483000",
+              "primary": "#00666d",
+              "surface-container-low": "#edf2f2",
+              "on-surface-variant": "#585c5d",
+              "on-tertiary": "#ffeefd",
+              "surface-container-highest": "#d7dede",
+              "secondary-dim": "#6b4900",
+              "tertiary-fixed-dim": "#e377fc",
+              "tertiary-fixed": "#ea8cff",
+              "on-primary-fixed": "#004348",
+              "secondary": "#7b5400",
+              "primary-fixed-dim": "#82dde6",
+              "tertiary": "#9128ad",
+              "error-dim": "#9f0519",
+              "on-tertiary-container": "#55006b",
+              "on-tertiary-fixed": "#2e003b",
+              "on-error": "#ffefee",
+              "secondary-container": "#ffc96f",
+              "surface-variant": "#d7dede",
+              "on-secondary-fixed-variant": "#6c4a00",
+              "on-secondary": "#fff1df",
+              "error": "#b31b25",
+              "inverse-primary": "#99f4fd",
+              "outline-variant": "#a9aeae",
+              "surface": "#f3f7f7",
+              "error-container": "#fb5151",
+              "secondary-fixed-dim": "#ffb623",
+              "outline": "#737878",
+              "tertiary-dim": "#8315a0",
+              "primary-container": "#91ebf4",
+              "surface-bright": "#f3f7f7",
+              "on-background": "#2b3030",
+              "secondary-fixed": "#ffc96f",
+              "on-primary-container": "#00575d",
+              "on-secondary-container": "#614100",
+              "surface-container-lowest": "#ffffff",
+              "tertiary-container": "#ea8cff",
+              "surface-container-high": "#dde4e4",
+              "on-primary": "#cffbff",
+              "background": "#f3f7f7",
+              "on-primary-fixed-variant": "#006268",
+              "inverse-surface": "#0a0f0f",
+              "on-tertiary-fixed-variant": "#63007c",
+              "inverse-on-surface": "#999e9e",
+              "surface-tint": "#00666d"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Be Vietnam Pro"],
+              "label": ["Plus Jakarta Sans"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface font-body text-on-surface selection:bg-primary-container selection:text-on-primary-container">
+<!-- Navigation Drawer (Admin Mode) -->
+<aside class="fixed inset-y-0 left-0 z-50 w-72 bg-surface-container-lowest shadow-xl rounded-r-full hidden md:flex flex-col border-r border-outline-variant/10">
+<div class="p-8">
+<div class="flex items-center gap-3 mb-10">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-primary-dim">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">shield_person</span>
+</div>
+<div>
+<h2 class="font-headline font-black text-primary leading-tight">Parental Control</h2>
+<p class="text-xs font-medium text-on-surface-variant/70 uppercase tracking-widest">Admin Mode</p>
+</div>
+</div>
+<nav class="space-y-2">
+<a class="flex items-center gap-4 text-on-surface-variant px-4 py-3 hover:bg-surface-container-low transition-all duration-300 rounded-full group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary">dashboard</span>
+<span class="font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-4 text-on-surface-variant px-4 py-3 hover:bg-surface-container-low transition-all duration-300 rounded-full group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary">add_circle</span>
+<span class="font-medium">Add Video</span>
+</a>
+<a class="flex items-center gap-4 bg-primary-container text-primary-dim px-4 py-3 rounded-full mx-2 font-bold shadow-sm" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">timer</span>
+<span class="font-medium">Time Limits</span>
+</a>
+<a class="flex items-center gap-4 text-on-surface-variant px-4 py-3 hover:bg-surface-container-low transition-all duration-300 rounded-full group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary">lock</span>
+<span class="font-medium">Safety Gate</span>
+</a>
+</nav>
+</div>
+<div class="mt-auto p-8">
+<div class="bg-surface-container rounded-3xl p-4 flex items-center gap-3">
+<img class="w-10 h-10 rounded-full object-cover border-2 border-primary-container" data-alt="close-up portrait of a smiling father with glasses in a professional home office setting soft lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA101e43TodRL1ed-deGevPORhx5bRJSB01UHwA1UHtto5QXSEh5P9fe-Z1gLZFbN-K3aw0RcjyIF5uaow_NUASA6EHKizc18TBM1muRFFYYy8gray9IhaFrqlPEHvXxYgxPw24xtdC1QHBEWGbo7gNvHFIzy6-zHRN-XiWgqrPwIhamb2TilEGGT13MMjQn8LAvV4wXZ2bsknz1lgckDeOZnmAQyvO95DQHhYU1VyzEo9xJVfMSe5JzgpNNYAlyB9qzlVcw03DNr0S"/>
+<div>
+<p class="text-sm font-bold text-on-surface leading-none">Parent Profile</p>
+<p class="text-[10px] text-on-surface-variant mt-1">Primary Admin</p>
+</div>
+<button class="ml-auto text-on-surface-variant hover:text-primary">
+<span class="material-symbols-outlined text-sm">settings</span>
+</button>
+</div>
+</div>
+</aside>
+<main class="md:ml-72 min-h-screen">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center w-full px-6 py-4 bg-surface/80 backdrop-blur-md sticky top-0 z-40">
+<div class="flex items-center gap-4">
+<h1 class="font-headline text-2xl font-bold tracking-tight text-primary">SafeVideo Admin</h1>
+</div>
+<div class="flex items-center gap-3">
+<button class="p-2 rounded-full hover:bg-surface-container-low transition-colors text-on-surface-variant">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="h-8 w-px bg-surface-container-high mx-2"></div>
+<button class="flex items-center gap-2 px-4 py-2 rounded-full bg-primary text-on-primary font-medium transition-all active:scale-95 duration-150">
+<span class="material-symbols-outlined text-sm">save</span>
+<span>Save Changes</span>
+</button>
+</div>
+</header>
+<!-- Content Canvas -->
+<div class="p-6 md:p-10 max-w-6xl mx-auto space-y-10">
+<!-- Hero Section -->
+<section class="relative overflow-hidden rounded-lg bg-gradient-to-br from-primary to-primary-dim p-8 md:p-12 text-on-primary">
+<div class="relative z-10 md:w-2/3">
+<h2 class="font-headline text-3xl md:text-4xl font-extrabold mb-4 leading-tight">Usage Controls</h2>
+<p class="text-on-primary/80 text-lg leading-relaxed">Define healthy digital boundaries for your child. Set daily consumption targets and schedule active viewing windows to ensure a balanced routine.</p>
+</div>
+<div class="absolute -right-10 -bottom-10 opacity-20 pointer-events-none">
+<span class="material-symbols-outlined text-[20rem]" style="font-variation-settings: 'wght' 200;">hourglass_top</span>
+</div>
+</section>
+<!-- Usage Management Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- Left: Daily Limit -->
+<div class="lg:col-span-7 space-y-6">
+<div class="bg-surface-container-lowest rounded-lg p-8 shadow-sm border border-outline-variant/5">
+<div class="flex items-center justify-between mb-8">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-2xl bg-primary-container/30 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">schedule</span>
+</div>
+<div>
+<h3 class="font-headline text-xl font-bold text-on-surface">Daily Time Limit</h3>
+<p class="text-sm text-on-surface-variant">Maximum video consumption per day</p>
+</div>
+</div>
+<div class="text-right">
+<span class="block text-3xl font-black text-primary font-headline">1h 15m</span>
+<span class="text-[10px] uppercase font-bold tracking-widest text-on-surface-variant">Current Target</span>
+</div>
+</div>
+<!-- Custom Bento Slider Logic -->
+<div class="space-y-4">
+<div class="relative h-4 bg-surface-container-high rounded-full overflow-hidden">
+<div class="absolute left-0 top-0 h-full w-[45%] bg-primary rounded-full transition-all duration-500"></div>
+</div>
+<div class="flex justify-between text-xs font-bold text-on-surface-variant/60 px-1">
+<span>15m</span>
+<span>30m</span>
+<span>1h</span>
+<span>2h</span>
+<span>3h</span>
+<span>Unlimited</span>
+</div>
+</div>
+<div class="grid grid-cols-3 gap-4 mt-10">
+<button class="flex flex-col items-center justify-center p-4 rounded-xl border border-outline-variant/20 hover:bg-surface-container-low transition-colors group">
+<span class="text-lg font-bold text-on-surface group-hover:text-primary">30m</span>
+<span class="text-[10px] uppercase tracking-tighter text-on-surface-variant">Quick Set</span>
+</button>
+<button class="flex flex-col items-center justify-center p-4 rounded-xl bg-primary-container/40 border-2 border-primary-container text-primary-dim">
+<span class="text-lg font-bold">1h</span>
+<span class="text-[10px] uppercase tracking-tighter">Recommended</span>
+</button>
+<button class="flex flex-col items-center justify-center p-4 rounded-xl border border-outline-variant/20 hover:bg-surface-container-low transition-colors group">
+<span class="text-lg font-bold text-on-surface group-hover:text-primary">2h</span>
+<span class="text-[10px] uppercase tracking-tighter text-on-surface-variant">Extended</span>
+</button>
+</div>
+</div>
+<!-- App Lockout Message Settings -->
+<div class="bg-surface-container-low rounded-lg p-6">
+<div class="flex items-center justify-between mb-4">
+<span class="font-bold text-on-surface">End-of-Session Message</span>
+<div class="flex items-center gap-2 text-primary text-sm font-bold">
+<span>Preview</span>
+<span class="material-symbols-outlined text-sm">open_in_new</span>
+</div>
+</div>
+<input class="w-full bg-surface-container-lowest border-none rounded-xl px-4 py-3 text-on-surface focus:ring-2 focus:ring-primary-container transition-all" type="text" value="Time to take a break and play outside! ☀️"/>
+</div>
+</div>
+<!-- Right: Active Hours / Sleep Timer -->
+<div class="lg:col-span-5 space-y-8">
+<div class="bg-surface-container-lowest rounded-lg p-8 shadow-sm border border-outline-variant/5">
+<div class="flex items-center gap-4 mb-8">
+<div class="w-12 h-12 rounded-2xl bg-secondary-container/30 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">bedtime</span>
+</div>
+<div>
+<h3 class="font-headline text-xl font-bold text-on-surface">Sleep Timer</h3>
+<p class="text-sm text-on-surface-variant">Block access during night hours</p>
+</div>
+</div>
+<div class="space-y-6">
+<div class="flex items-center justify-between p-4 bg-surface-container-low rounded-2xl">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-on-surface-variant">wb_twilight</span>
+<div>
+<p class="text-[10px] uppercase font-bold text-on-surface-variant">Wake Up</p>
+<p class="font-headline font-bold text-lg">08:00 AM</p>
+</div>
+</div>
+<button class="w-10 h-10 rounded-full bg-surface-container-lowest flex items-center justify-center shadow-sm text-on-surface-variant hover:text-primary">
+<span class="material-symbols-outlined">edit</span>
+</button>
+</div>
+<div class="flex items-center justify-between p-4 bg-surface-container-low rounded-2xl">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-on-surface-variant">dark_mode</span>
+<div>
+<p class="text-[10px] uppercase font-bold text-on-surface-variant">Sleep Time</p>
+<p class="font-headline font-bold text-lg">07:30 PM</p>
+</div>
+</div>
+<button class="w-10 h-10 rounded-full bg-surface-container-lowest flex items-center justify-center shadow-sm text-on-surface-variant hover:text-primary">
+<span class="material-symbols-outlined">edit</span>
+</button>
+</div>
+</div>
+<div class="mt-8 pt-8 border-t border-outline-variant/10">
+<div class="flex items-center justify-between">
+<div>
+<p class="font-bold text-on-surface">Weekend Extensions</p>
+<p class="text-xs text-on-surface-variant">Add 30m extra on Sat/Sun</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-14 h-8 bg-surface-container-highest rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-1 after:left-1 after:bg-white after:rounded-full after:h-6 after:w-6 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+</div>
+</div>
+<!-- Usage Stats Preview -->
+<div class="relative group rounded-lg overflow-hidden h-48">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="vibrant abstract 3d bar chart with soft rounded corners in shades of teal and amber showing digital usage trends" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAp6tmgVDkk2q6ZZ6NA4kTkbzfKnYCdibIGQfzrhAWBwa0eJJHZlotU-yZn0HresmAhbgJ-CiCANEbpAAGEP9Jb4Azdwtq05X1Ph-W73u36xhZXv1s385zcxTmnHZpjhKU0FQL8ZpL3AausLSw4yWdCdL_1i1S9M2BFEHq0W8p3qerIpiK15oVas2m-pXihnzaaiXGNmIBMn2nsDB5aV1IctB32dtbnfFzC83yYkD1aYspE5lf0y_ld6YuKmlaeutuaeRi1IliEQWyL"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end p-6">
+<div class="text-white">
+<p class="text-xs font-bold uppercase tracking-wider opacity-80">Last 7 Days</p>
+<p class="text-xl font-bold font-headline">Usage is down 12%</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer Meta -->
+<footer class="pt-10 border-t border-outline-variant/10 flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex items-center gap-2 text-on-surface-variant text-sm">
+<span class="material-symbols-outlined text-sm">history</span>
+<span>Last updated: Today at 10:42 AM</span>
+</div>
+<div class="flex items-center gap-6">
+<a class="text-sm font-bold text-primary hover:underline" href="#">Reset to Default</a>
+<a class="text-sm font-bold text-primary hover:underline" href="#">View History</a>
+</div>
+</footer>
+</div>
+</main>
+<!-- Bottom Navigation (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 bg-surface-container-lowest flex justify-around items-center px-4 pb-6 pt-4 rounded-t-[3rem] shadow-[0_-8px_24px_rgba(0,0,0,0.06)]">
+<a class="flex flex-col items-center justify-center text-on-surface-variant opacity-60 px-4 py-2" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-headline text-[10px] font-black uppercase tracking-widest mt-1">Dash</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-primary-container text-primary-dim rounded-[2rem] px-6 py-2 scale-110 font-bold" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">timer</span>
+<span class="font-headline text-[10px] font-black uppercase tracking-widest mt-1">Limits</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant opacity-60 px-4 py-2" href="#">
+<span class="material-symbols-outlined">lock</span>
+<span class="font-headline text-[10px] font-black uppercase tracking-widest mt-1">Gate</span>
+</a>
+</nav>
+</body></html>

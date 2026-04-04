@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SafeVideo Admin Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Be_Vietnam_Pro:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary-dim": "#00595f",
+                        "surface-dim": "#ced6d6",
+                        "surface-container": "#e4e9e9",
+                        "on-error-container": "#570008",
+                        "on-surface": "#2b3030",
+                        "primary-fixed": "#91ebf4",
+                        "on-secondary-fixed": "#483000",
+                        "primary": "#00666d",
+                        "surface-container-low": "#edf2f2",
+                        "on-surface-variant": "#585c5d",
+                        "on-tertiary": "#ffeefd",
+                        "surface-container-highest": "#d7dede",
+                        "secondary-dim": "#6b4900",
+                        "tertiary-fixed-dim": "#e377fc",
+                        "tertiary-fixed": "#ea8cff",
+                        "on-primary-fixed": "#004348",
+                        "secondary": "#7b5400",
+                        "primary-fixed-dim": "#82dde6",
+                        "tertiary": "#9128ad",
+                        "error-dim": "#9f0519",
+                        "on-tertiary-container": "#55006b",
+                        "on-tertiary-fixed": "#2e003b",
+                        "on-error": "#ffefee",
+                        "secondary-container": "#ffc96f",
+                        "surface-variant": "#d7dede",
+                        "on-secondary-fixed-variant": "#6c4a00",
+                        "on-secondary": "#fff1df",
+                        "error": "#b31b25",
+                        "inverse-primary": "#99f4fd",
+                        "outline-variant": "#a9aeae",
+                        "surface": "#f3f7f7",
+                        "error-container": "#fb5151",
+                        "secondary-fixed-dim": "#ffb623",
+                        "outline": "#737878",
+                        "tertiary-dim": "#8315a0",
+                        "primary-container": "#91ebf4",
+                        "surface-bright": "#f3f7f7",
+                        "on-background": "#2b3030",
+                        "secondary-fixed": "#ffc96f",
+                        "on-primary-container": "#00575d",
+                        "on-secondary-container": "#614100",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-container": "#ea8cff",
+                        "surface-container-high": "#dde4e4",
+                        "on-primary": "#cffbff",
+                        "background": "#f3f7f7",
+                        "on-primary-fixed-variant": "#006268",
+                        "inverse-surface": "#0a0f0f",
+                        "on-tertiary-fixed-variant": "#63007c",
+                        "inverse-on-surface": "#999e9e",
+                        "surface-tint": "#00666d"
+                    },
+                    fontFamily: {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Be Vietnam Pro"],
+                        "label": ["Plus Jakarta Sans"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Be Vietnam Pro', sans-serif; }
+        h1, h2, h3, .headline { font-family: 'Plus Jakarta Sans', sans-serif; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface min-h-screen">
+<!-- Sidebar Navigation Drawer -->
+<aside class="fixed inset-y-0 left-0 z-50 w-72 bg-surface-container-lowest shadow-xl flex flex-col transition-all duration-300 ease-in-out border-r border-transparent rounded-r-full">
+<div class="p-8 flex flex-col gap-1">
+<div class="flex items-center gap-3 mb-8">
+<div class="w-12 h-12 rounded-full bg-primary-container flex items-center justify-center">
+<img alt="Parent User" class="w-8 h-8 rounded-full" data-alt="professional photographic headshot of a smiling father in a soft-lit indoor home office setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMx5BiCoWZTI-1YcV2dKnPbPSaP55I_rsv9vsOj_5BGLmEvX5uLrJOVlbB-Cmqu7xXn2RY7wblSphu9coztG60fYtjZgTn04g_O_eAIFi_dtvE8OF_VkS_zabtgAWvOYS2tM5xTRXfeqvsJBXR52SBfMhAtxNxlNl6TzuQL-Yv8SWFM1PUNqtCqQgntlZQbfL1joVwl_Wef6yvRTZMTeG1GoKZyMTH1ryC1wQ9KbVfK1maeFN2y8Hv0nyCScO9gBasvfaN_XsKH-en"/>
+</div>
+<div>
+<p class="font-headline font-black text-primary text-lg">Parental Control</p>
+<p class="text-xs text-on-surface-variant font-medium">Admin Mode</p>
+</div>
+</div>
+<nav class="flex flex-col gap-2">
+<a class="bg-primary-container text-on-primary-container rounded-full mx-2 px-6 py-4 flex items-center gap-4 transition-all duration-300 font-medium" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="text-on-surface-variant hover:bg-surface-container-low rounded-full mx-2 px-6 py-4 flex items-center gap-4 transition-all duration-300 font-medium" href="#">
+<span class="material-symbols-outlined">add_circle</span>
+<span>Add Video</span>
+</a>
+<a class="text-on-surface-variant hover:bg-surface-container-low rounded-full mx-2 px-6 py-4 flex items-center gap-4 transition-all duration-300 font-medium" href="#">
+<span class="material-symbols-outlined">timer</span>
+<span>Time Limits</span>
+</a>
+<a class="text-on-surface-variant hover:bg-surface-container-low rounded-full mx-2 px-6 py-4 flex items-center gap-4 transition-all duration-300 font-medium" href="#">
+<span class="material-symbols-outlined">lock</span>
+<span>Safety Gate</span>
+</a>
+</nav>
+</div>
+<div class="mt-auto p-8">
+<div class="p-4 bg-surface-container-low rounded-2xl flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">verified_user</span>
+<span class="text-xs font-bold text-primary tracking-wide uppercase">Secure Session</span>
+</div>
+</div>
+</aside>
+<!-- Main Canvas -->
+<main class="ml-72 min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center w-full px-10 py-6 bg-surface">
+<div class="flex flex-col">
+<h1 class="font-headline text-3xl font-extrabold tracking-tight text-primary">SafeVideo Admin</h1>
+<div class="h-1 w-12 bg-primary-container rounded-full mt-1"></div>
+</div>
+<div class="flex items-center gap-4">
+<button class="w-12 h-12 rounded-full flex items-center justify-center hover:bg-surface-container transition-colors active:scale-95">
+<span class="material-symbols-outlined text-on-surface-variant">search</span>
+</button>
+<button class="w-12 h-12 rounded-full flex items-center justify-center hover:bg-surface-container transition-colors active:scale-95">
+<span class="material-symbols-outlined text-on-surface-variant">settings</span>
+</button>
+</div>
+</header>
+<!-- Content Area -->
+<section class="px-10 pb-20">
+<!-- Bento-style Summary Cards -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+<div class="md:col-span-2 bg-gradient-to-br from-primary to-primary-dim p-8 rounded-xl flex flex-col justify-between text-on-primary shadow-lg overflow-hidden relative">
+<div class="relative z-10">
+<p class="text-primary-fixed opacity-80 font-medium mb-1">Active Profile</p>
+<h2 class="text-4xl font-headline font-extrabold tracking-tight mb-4">Leo's Learning Space</h2>
+<div class="flex items-center gap-4">
+<span class="px-4 py-2 bg-primary-fixed/20 rounded-full text-sm font-bold backdrop-blur-md">3h 20m Remaining Today</span>
+</div>
+</div>
+<div class="absolute -right-10 -bottom-10 w-48 h-48 bg-primary-fixed/10 rounded-full blur-3xl"></div>
+</div>
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-sm flex flex-col justify-center items-center text-center">
+<p class="text-on-surface-variant font-medium mb-2">Total Approved</p>
+<span class="text-6xl font-headline font-black text-primary">124</span>
+<p class="text-xs font-bold text-primary-dim mt-4 uppercase tracking-widest">Videos Available</p>
+</div>
+</div>
+<!-- Content Manager Toolbar -->
+<div class="flex justify-between items-end mb-8">
+<div>
+<h3 class="text-2xl font-headline font-bold text-on-surface">Content Library</h3>
+<p class="text-on-surface-variant">Manage and approve videos for the current profile</p>
+</div>
+<button class="bg-primary text-on-primary px-8 py-4 rounded-full font-headline font-bold flex items-center gap-3 hover:bg-primary-dim transition-all shadow-md active:scale-95">
+<span class="material-symbols-outlined" style="font-variation-settings: 'wght' 600;">add</span>
+<span>Add New Content</span>
+</button>
+</div>
+<!-- Video List (Asymmetric Grid) -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+<!-- Video Card 1 -->
+<div class="bg-surface-container-lowest p-6 rounded-lg flex gap-6 items-center hover:shadow-md transition-shadow group">
+<div class="relative w-40 h-24 flex-shrink-0 rounded-lg overflow-hidden">
+<img alt="Science Experiment" class="w-full h-full object-cover" data-alt="vibrant educational animation thumbnail showing colorful scientific test tubes with bubbles and sparks, high quality 3D render" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDuW9Tm5Ab_Ovv806OFD0ckX0cuR5F_uYC6YW4d_fsudYqw-FwjNPedxJkS871zr9Gv30PMQ-7-nXzBwc_AWUinH2C1Vsl8VSNeai9-RN4SpkjrM77TctGxqwBISbytDmaG-h_nh1MyAPzs5UHZzIGB4xQQdmvLSnfCTNKO0oPzqmvafYh64FpkPHBE9LJk7sekkmF7oMA9xuMFrUgOExa2nTHDbERl24a3IC6Px6jDREwads1NDYrnQoOFSS2LRbH8qf1zlRjCjnqx"/>
+<div class="absolute inset-0 bg-on-surface/20 group-hover:bg-transparent transition-colors"></div>
+</div>
+<div class="flex-grow">
+<h4 class="font-headline font-bold text-lg text-on-surface mb-1">Volcanoes 101: Science Explainer</h4>
+<p class="text-on-surface-variant text-sm mb-3">Discovery Kids • 8:45</p>
+<div class="flex items-center justify-between">
+<span class="text-xs font-bold text-primary bg-primary-container px-3 py-1 rounded-full">Educational</span>
+<!-- Custom Toggle -->
+<div class="flex items-center cursor-pointer">
+<div class="w-12 h-6 bg-primary rounded-full relative p-1 flex items-center transition-colors">
+<div class="w-4 h-4 bg-white rounded-full ml-auto shadow-sm"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Video Card 2 -->
+<div class="bg-surface-container-lowest p-6 rounded-lg flex gap-6 items-center hover:shadow-md transition-shadow group">
+<div class="relative w-40 h-24 flex-shrink-0 rounded-lg overflow-hidden">
+<img alt="Animal Kingdom" class="w-full h-full object-cover" data-alt="cinematic close-up of a baby panda eating bamboo in a lush green forest, soft dappled sunlight, high resolution nature photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCodaOBHglXNJlJ_fUK_TTWuSgedGyMF1-ibZwEHR0sXGpMVWhAaLD7eXjkvLBRwgEWYf6OqUi5OWFGT4jVRmeU2bbMRzMr990XAg2pV0oiWtBoGrAcFixsuzRzwXCc7g-KwjlNDSNrdZJiamkR9MoOZ68LAOW94VpEw0_tXhtziFmxPIgQKCrKFi6lQOkAJ2rZivyKSwr09izG-Pvt3OCRFB3tvGxiG_jO6zzHTXx6G9PfnF-B5jwY-x0sVtxwC58XJnY1wAliZgmS"/>
+<div class="absolute inset-0 bg-on-surface/20 group-hover:bg-transparent transition-colors"></div>
+</div>
+<div class="flex-grow">
+<h4 class="font-headline font-bold text-lg text-on-surface mb-1">Meet the Giant Pandas</h4>
+<p class="text-on-surface-variant text-sm mb-3">Animal Planet • 12:20</p>
+<div class="flex items-center justify-between">
+<span class="text-xs font-bold text-secondary bg-secondary-container px-3 py-1 rounded-full">Nature</span>
+<div class="flex items-center cursor-pointer">
+<div class="w-12 h-6 bg-primary rounded-full relative p-1 flex items-center transition-colors">
+<div class="w-4 h-4 bg-white rounded-full ml-auto shadow-sm"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Video Card 3 -->
+<div class="bg-surface-container-lowest p-6 rounded-lg flex gap-6 items-center hover:shadow-md transition-shadow group">
+<div class="relative w-40 h-24 flex-shrink-0 rounded-lg overflow-hidden">
+<img alt="Nursery Rhymes" class="w-full h-full object-cover" data-alt="cheerful 3D animated scene with a friendly sun and clouds over a green meadow, bright primary colors, kids show style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_6YzKTBd889lAw7KDr2a5p9tVFLHyU6vTdBhPPpcOxeDFmyY5TdZYQX3cHg6OnZUTMm8SCOf3bNNcH_HdghkbbmuxI-9RqKOB6o9utJqr7cFt3Osz3C3JG5KkjgxnCNqfTe70KZeb4-8hvdSLiRDX6lPE6uRzLs7RGletQH8se3V2aNQ5vcKQu-fMl_DCGIk3ru-8EPlmt910tqBSgC4IwNrb4DqcMl-gZHAB9xDHi0lSP2v-KDFFn_g8_bD5bZtEC3b7VKWIxlhT"/>
+<div class="absolute inset-0 bg-on-surface/20 group-hover:bg-transparent transition-colors"></div>
+</div>
+<div class="flex-grow">
+<h4 class="font-headline font-bold text-lg text-on-surface mb-1">Afternoon Lullabies Mix</h4>
+<p class="text-on-surface-variant text-sm mb-3">Tiny Tunes • 25:00</p>
+<div class="flex items-center justify-between">
+<span class="text-xs font-bold text-tertiary bg-tertiary-container px-3 py-1 rounded-full">Music</span>
+<div class="flex items-center cursor-pointer">
+<div class="w-12 h-6 bg-surface-container-highest rounded-full relative p-1 flex items-center transition-colors">
+<div class="w-4 h-4 bg-white rounded-full shadow-sm"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Video Card 4 -->
+<div class="bg-surface-container-lowest p-6 rounded-lg flex gap-6 items-center hover:shadow-md transition-shadow group">
+<div class="relative w-40 h-24 flex-shrink-0 rounded-lg overflow-hidden">
+<img alt="Outer Space" class="w-full h-full object-cover" data-alt="breathtaking digital illustration of the solar system with glowing planets and a starry nebular background, vibrant purples and teals" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDr0HnJqGI-UYfn7wlvW1QN0TyWesoNon0rULHoQc4ZW9DblkR4gUhWdpcCpcD7zWfUWQiNjEUYmGA2uVk8RxT8PXsCiYOXfKRHAbksErB78OKUDFnrvNXN8esvxC5Oossl-aKogkBy0zDRIOLw9QqYzSMCLud0bskT5tWT2c8fPKTVnEEHcGDJOgynUS9FvhPZl5r0-peDhCL0ehDG0dBrhbk6SavSIzVBfQSDWsR9JX8bL7xKKg04mKBMbqg-M1xq1Ka8WmSoggWg"/>
+<div class="absolute inset-0 bg-on-surface/20 group-hover:bg-transparent transition-colors"></div>
+</div>
+<div class="flex-grow">
+<h4 class="font-headline font-bold text-lg text-on-surface mb-1">Our Solar System Journey</h4>
+<p class="text-on-surface-variant text-sm mb-3">NASA Kids • 15:45</p>
+<div class="flex items-center justify-between">
+<span class="text-xs font-bold text-primary bg-primary-container px-3 py-1 rounded-full">Science</span>
+<div class="flex items-center cursor-pointer">
+<div class="w-12 h-6 bg-primary rounded-full relative p-1 flex items-center transition-colors">
+<div class="w-4 h-4 bg-white rounded-full ml-auto shadow-sm"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Video Card 5 -->
+<div class="bg-surface-container-lowest p-6 rounded-lg flex gap-6 items-center hover:shadow-md transition-shadow group">
+<div class="relative w-40 h-24 flex-shrink-0 rounded-lg overflow-hidden">
+<img alt="Drawing Class" class="w-full h-full object-cover" data-alt="overhead shot of a child's hands using bright watercolors on thick paper, messy and creative art studio vibe" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkoIV-TqD_04Q3YVBPqb4b16VPr-6icLRxv_3v-hzB6Sqi5W5780RIm2b-t4U1NoxTg1qikkEithb-o3UdqpFD6LpKkP7QPkR0df_79vJshLwsti0diNsU4fg4blAcXAMr6OzsnHQBns81yM_XvqcXXCp9GnxwElHwRUhAYM2UNXDkXGRVeihgm8Sbqi4MtpKtUpp7y_7HsAkYo7RZWSI8WmiT7fHLPAO5uDU7aWjD1r0eXa4DWtOUdyva1qIOv46vrfbST2Fv3BMB"/>
+<div class="absolute inset-0 bg-on-surface/20 group-hover:bg-transparent transition-colors"></div>
+</div>
+<div class="flex-grow">
+<h4 class="font-headline font-bold text-lg text-on-surface mb-1">How to Draw: Superheroes</h4>
+<p class="text-on-surface-variant text-sm mb-3">Art for Kids • 10:15</p>
+<div class="flex items-center justify-between">
+<span class="text-xs font-bold text-on-secondary-fixed-variant bg-secondary-fixed px-3 py-1 rounded-full">Art</span>
+<div class="flex items-center cursor-pointer">
+<div class="w-12 h-6 bg-primary rounded-full relative p-1 flex items-center transition-colors">
+<div class="w-4 h-4 bg-white rounded-full ml-auto shadow-sm"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Video Card 6 -->
+<div class="bg-surface-container-lowest p-6 rounded-lg flex gap-6 items-center hover:shadow-md transition-shadow group">
+<div class="relative w-40 h-24 flex-shrink-0 rounded-lg overflow-hidden">
+<img alt="Numbers" class="w-full h-full object-cover" data-alt="playful 3D numbers floating in a vibrant sky with happy faces, educational math animation style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzF7bvudvq2UbyV7Oj2EE5UbeAupkHIbUNgCAg6U82hJdNY8ItI3-ge3s-rXUc5Q_kRRmfyd6C_Ir7itA4IgmwCO3v8C1y6MSjZtfVlVqC7SELozWSRvnbZ0dEUc2l4pCketyjc5u1u2_He50M4ijsSTkR3wcOU4dYEvfC2OGK3ypGODfkB75myncjNad7T3LvXcdINcah_xGpPQV8TwNFRjNbBkioVYMZlDdl7cq_qiG8-f_pqE97RLTTCOxymgfydtaqNV8AnEjJ"/>
+<div class="absolute inset-0 bg-on-surface/20 group-hover:bg-transparent transition-colors"></div>
+</div>
+<div class="flex-grow">
+<h4 class="font-headline font-bold text-lg text-on-surface mb-1">Counting to 100 Adventure</h4>
+<p class="text-on-surface-variant text-sm mb-3">Number Crew • 18:30</p>
+<div class="flex items-center justify-between">
+<span class="text-xs font-bold text-primary bg-primary-container px-3 py-1 rounded-full">Math</span>
+<div class="flex items-center cursor-pointer">
+<div class="w-12 h-6 bg-primary rounded-full relative p-1 flex items-center transition-colors">
+<div class="w-4 h-4 bg-white rounded-full ml-auto shadow-sm"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Load More Interaction -->
+<div class="mt-12 flex justify-center">
+<button class="px-12 py-4 bg-surface-container-highest text-on-surface font-headline font-bold rounded-full hover:bg-surface-dim transition-colors active:scale-95">
+                    View More Content
+                </button>
+</div>
+</section>
+</main>
+<!-- Floating Parental Gate (Hidden by default, used for demo) -->
+<div class="fixed bottom-8 right-8 z-40">
+<button class="bg-tertiary text-on-tertiary w-16 h-16 rounded-full shadow-2xl flex items-center justify-center hover:scale-105 transition-transform group">
+<span class="material-symbols-outlined text-3xl">child_care</span>
+<div class="absolute bottom-full right-0 mb-4 bg-tertiary-container text-on-tertiary-container p-4 rounded-xl shadow-lg w-48 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+<p class="text-xs font-bold uppercase tracking-widest mb-1">Switch Mode</p>
+<p class="text-sm font-medium">Switching to Kid Mode requires a security challenge.</p>
+</div>
+</button>
+</div>
+</body></html>

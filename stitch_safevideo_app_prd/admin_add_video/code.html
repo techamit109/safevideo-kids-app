@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SafeVideo Admin - Add Video</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Be+Vietnam+Pro:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary-dim": "#00595f",
+                        "surface-dim": "#ced6d6",
+                        "surface-container": "#e4e9e9",
+                        "on-error-container": "#570008",
+                        "on-surface": "#2b3030",
+                        "primary-fixed": "#91ebf4",
+                        "on-secondary-fixed": "#483000",
+                        "primary": "#00666d",
+                        "surface-container-low": "#edf2f2",
+                        "on-surface-variant": "#585c5d",
+                        "on-tertiary": "#ffeefd",
+                        "surface-container-highest": "#d7dede",
+                        "secondary-dim": "#6b4900",
+                        "tertiary-fixed-dim": "#e377fc",
+                        "tertiary-fixed": "#ea8cff",
+                        "on-primary-fixed": "#004348",
+                        "secondary": "#7b5400",
+                        "primary-fixed-dim": "#82dde6",
+                        "tertiary": "#9128ad",
+                        "error-dim": "#9f0519",
+                        "on-tertiary-container": "#55006b",
+                        "on-tertiary-fixed": "#2e003b",
+                        "on-error": "#ffefee",
+                        "secondary-container": "#ffc96f",
+                        "surface-variant": "#d7dede",
+                        "on-secondary-fixed-variant": "#6c4a00",
+                        "on-secondary": "#fff1df",
+                        "error": "#b31b25",
+                        "inverse-primary": "#99f4fd",
+                        "outline-variant": "#a9aeae",
+                        "surface": "#f3f7f7",
+                        "error-container": "#fb5151",
+                        "secondary-fixed-dim": "#ffb623",
+                        "outline": "#737878",
+                        "tertiary-dim": "#8315a0",
+                        "primary-container": "#91ebf4",
+                        "surface-bright": "#f3f7f7",
+                        "on-background": "#2b3030",
+                        "secondary-fixed": "#ffc96f",
+                        "on-primary-container": "#00575d",
+                        "on-secondary-container": "#614100",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-container": "#ea8cff",
+                        "surface-container-high": "#dde4e4",
+                        "on-primary": "#cffbff",
+                        "background": "#f3f7f7",
+                        "on-primary-fixed-variant": "#006268",
+                        "inverse-surface": "#0a0f0f",
+                        "on-tertiary-fixed-variant": "#63007c",
+                        "inverse-on-surface": "#999e9e",
+                        "surface-tint": "#00666d"
+                    },
+                    fontFamily: {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Be Vietnam Pro"],
+                        "label": ["Plus Jakarta Sans"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Be Vietnam Pro', sans-serif; }
+        h1, h2, h3 { font-family: 'Plus Jakarta Sans', sans-serif; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface selection:bg-primary-fixed selection:text-on-primary-fixed">
+<aside class="fixed inset-y-0 left-0 z-50 w-72 bg-[#ffffff] dark:bg-slate-900 shadow-xl dark:shadow-none transition-all duration-300 ease-in-out rounded-r-full hidden md:flex flex-col">
+<div class="px-8 py-10 flex flex-col gap-2">
+<h2 class="text-[#006064] font-black text-2xl tracking-tight font-headline">SafeVideo</h2>
+<div class="mt-8 flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">face</span>
+</div>
+<div>
+<p class="font-headline font-bold text-on-surface text-sm">Parental Control</p>
+<p class="text-on-surface-variant text-xs font-medium">Admin Mode</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 px-4 space-y-2">
+<a class="flex items-center gap-4 text-[#2b3030] dark:text-slate-400 px-4 py-3 hover:bg-[#f3f7f7] dark:hover:bg-slate-800 transition-colors rounded-full font-medium" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-4 bg-[#91ebf4] dark:bg-cyan-900 text-[#006064] dark:text-cyan-100 rounded-full mx-2 px-4 py-3 font-bold transition-all duration-300" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">add_circle</span>
+<span>Add Video</span>
+</a>
+<a class="flex items-center gap-4 text-[#2b3030] dark:text-slate-400 px-4 py-3 hover:bg-[#f3f7f7] dark:hover:bg-slate-800 transition-colors rounded-full font-medium" href="#">
+<span class="material-symbols-outlined">timer</span>
+<span>Time Limits</span>
+</a>
+<a class="flex items-center gap-4 text-[#2b3030] dark:text-slate-400 px-4 py-3 hover:bg-[#f3f7f7] dark:hover:bg-slate-800 transition-colors rounded-full font-medium" href="#">
+<span class="material-symbols-outlined">lock</span>
+<span>Safety Gate</span>
+</a>
+</nav>
+<div class="p-8">
+<div class="bg-surface-container-low p-4 rounded-lg flex flex-col gap-3">
+<p class="text-xs font-bold text-on-surface-variant uppercase tracking-wider">Storage Usage</p>
+<div class="h-2 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[45%] rounded-full"></div>
+</div>
+<p class="text-[10px] text-on-surface-variant">450MB of 1GB used</p>
+</div>
+</div>
+</aside>
+<div class="md:ml-72 min-h-screen flex flex-col">
+<header class="flex justify-between items-center w-full px-6 py-4 bg-[#f3f7f7] dark:bg-slate-900 sticky top-0 z-40">
+<div class="flex items-center gap-4">
+<button class="md:hidden p-2 hover:bg-surface-container rounded-full transition-colors">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h1 class="font-['Plus_Jakarta_Sans'] text-2xl font-bold tracking-tight text-[#006064] dark:text-cyan-400">Add Video</h1>
+</div>
+<div class="flex items-center gap-3">
+<button class="p-2 text-[#006064] dark:text-cyan-400 hover:bg-[#e4e9e9] transition-colors rounded-full active:scale-95 duration-150">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<div class="w-10 h-10 rounded-full overflow-hidden ring-2 ring-primary-container ring-offset-2 ring-offset-surface">
+<img alt="Parent Profile" data-alt="professional headshot of a smiling father with glasses and casual attire in a bright office setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAL5_5kr_GRKo7t11VnybmTHWxdof20JSpEEuZepNtASQjMqU2naoaL6hxshjS6cACGM-mOc1nR-ufrTCYPECMjwzL0pErggl8VSxCIzOU2nxuHzflfuUEc-XpEfpSWOI78tWRXGbckbQej9Fmhf4_DUhnURA-moulKqTkg5g2q7AZMbvjyfLKPWHE_SW81vW-v_VnFG7lJNt6wTNg4mQabMeZDYRW4Vj70CW9X78xRVpu2KAKa5ujjwsgfhJ7e8o-X48_W-E6UlEeI"/>
+</div>
+</div>
+</header>
+<div class="bg-[#edf2f2] dark:bg-slate-800 h-px w-full"></div>
+<main class="flex-1 p-6 lg:p-12 max-w-5xl mx-auto w-full">
+<div class="grid lg:grid-cols-5 gap-8">
+<div class="lg:col-span-3 space-y-8">
+<section class="bg-surface-container-lowest p-8 lg:p-10 rounded-lg shadow-sm border border-outline-variant/10">
+<div class="mb-8">
+<h3 class="text-xl font-bold text-on-surface font-headline mb-2">Video Details</h3>
+<p class="text-on-surface-variant text-sm">Paste a link and we'll handle the safety scan automatically.</p>
+</div>
+<form class="space-y-6">
+<div class="space-y-2">
+<label class="text-sm font-bold text-on-surface ml-1 font-headline">Video URL</label>
+<div class="relative group">
+<div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-on-surface-variant group-focus-within:text-primary transition-colors">
+<span class="material-symbols-outlined">link</span>
+</div>
+<input class="w-full pl-12 pr-4 py-4 bg-surface-container-highest border-none rounded-lg focus:ring-2 focus:ring-primary focus:bg-primary-container transition-all outline-none font-medium placeholder:text-outline" placeholder="https://youtube.com/watch?v=..." type="url"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-bold text-on-surface ml-1 font-headline">Display Title</label>
+<input class="w-full px-4 py-4 bg-surface-container-highest border-none rounded-lg focus:ring-2 focus:ring-primary focus:bg-primary-container transition-all outline-none font-medium placeholder:text-outline" placeholder="Friendly title for your child" type="text"/>
+</div>
+<div class="space-y-4">
+<label class="text-sm font-bold text-on-surface ml-1 font-headline">Select Categories</label>
+<div class="flex flex-wrap gap-2">
+<button class="px-5 py-2 rounded-full border-2 border-primary text-primary font-bold text-sm bg-primary-container transition-all hover:bg-primary-fixed" type="button">Educational</button>
+<button class="px-5 py-2 rounded-full border-2 border-transparent text-on-surface-variant font-medium text-sm bg-surface-container-highest transition-all hover:bg-surface-container" type="button">Music</button>
+<button class="px-5 py-2 rounded-full border-2 border-transparent text-on-surface-variant font-medium text-sm bg-surface-container-highest transition-all hover:bg-surface-container" type="button">Storytime</button>
+<button class="px-5 py-2 rounded-full border-2 border-transparent text-on-surface-variant font-medium text-sm bg-surface-container-highest transition-all hover:bg-surface-container" type="button">Science</button>
+<button class="px-5 py-2 rounded-full border-2 border-transparent text-on-surface-variant font-medium text-sm bg-surface-container-highest transition-all hover:bg-surface-container" type="button">+ Add New</button>
+</div>
+</div>
+<div class="pt-6">
+<button class="w-full py-4 bg-primary text-on-primary rounded-full font-bold text-lg hover:bg-primary-dim transition-all active:scale-[0.98] duration-150 flex items-center justify-center gap-3" type="submit">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">save</span>
+                                    Save Video to Library
+                                </button>
+</div>
+</form>
+</section>
+</div>
+<div class="lg:col-span-2 space-y-6">
+<div class="bg-surface-container-low p-8 rounded-lg">
+<h4 class="font-headline font-extrabold text-[#006064] mb-4">Safety Preview</h4>
+<div class="aspect-video bg-surface-container-highest rounded-lg overflow-hidden relative flex items-center justify-center border-2 border-dashed border-outline-variant">
+<div class="text-center p-6 flex flex-col items-center gap-3">
+<span class="material-symbols-outlined text-4xl text-outline">video_library</span>
+<p class="text-sm text-on-surface-variant font-medium">Enter a URL to see the content safety analysis.</p>
+</div>
+</div>
+<div class="mt-6 space-y-4">
+<div class="flex items-center gap-3 text-sm font-medium text-on-surface-variant">
+<span class="material-symbols-outlined text-primary">verified_user</span>
+<span>AI Content Filtering Active</span>
+</div>
+<div class="flex items-center gap-3 text-sm font-medium text-on-surface-variant">
+<span class="material-symbols-outlined text-primary">comments_disabled</span>
+<span>Comments automatically hidden</span>
+</div>
+<div class="flex items-center gap-3 text-sm font-medium text-on-surface-variant">
+<span class="material-symbols-outlined text-primary">ads_click</span>
+<span>Ad-free playback interface</span>
+</div>
+</div>
+</div>
+<div class="bg-primary p-6 rounded-lg text-on-primary">
+<div class="flex items-center gap-3 mb-3">
+<span class="material-symbols-outlined">lightbulb</span>
+<h4 class="font-headline font-bold">Pro-Tip</h4>
+</div>
+<p class="text-sm opacity-90 leading-relaxed">You can add entire playlists by pasting the playlist URL. We'll queue each video for safety verification individually.</p>
+</div>
+</div>
+</div>
+</main>
+</div>
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-4 bg-[#ffffff] dark:bg-slate-900 shadow-[0_-8px_24px_rgba(0,0,0,0.06)] rounded-t-[3rem]">
+<a class="flex flex-col items-center justify-center text-[#2b3030] dark:text-slate-400 opacity-60" href="#">
+<span class="material-symbols-outlined">subscriptions</span>
+<span class="font-['Plus_Jakarta_Sans'] text-xs font-black uppercase tracking-widest mt-1">Videos</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-[#ffc96f] dark:bg-amber-700 text-[#7b5400] dark:text-amber-50 rounded-[2rem] px-6 py-2 scale-110" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">add_circle</span>
+<span class="font-['Plus_Jakarta_Sans'] text-xs font-black uppercase tracking-widest mt-1">Add</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#2b3030] dark:text-slate-400 opacity-60" href="#">
+<span class="material-symbols-outlined">hourglass_top</span>
+<span class="font-['Plus_Jakarta_Sans'] text-xs font-black uppercase tracking-widest mt-1">Timer</span>
+</a>
+</nav>
+</body></html>

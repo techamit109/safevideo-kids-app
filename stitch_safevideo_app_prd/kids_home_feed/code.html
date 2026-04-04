@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SafeVideo Kids Home</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Be+Vietnam+Pro:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary-dim": "#00595f",
+              "surface-dim": "#ced6d6",
+              "surface-container": "#e4e9e9",
+              "on-error-container": "#570008",
+              "on-surface": "#2b3030",
+              "primary-fixed": "#91ebf4",
+              "on-secondary-fixed": "#483000",
+              "primary": "#00666d",
+              "surface-container-low": "#edf2f2",
+              "on-surface-variant": "#585c5d",
+              "on-tertiary": "#ffeefd",
+              "surface-container-highest": "#d7dede",
+              "secondary-dim": "#6b4900",
+              "tertiary-fixed-dim": "#e377fc",
+              "tertiary-fixed": "#ea8cff",
+              "on-primary-fixed": "#004348",
+              "secondary": "#7b5400",
+              "primary-fixed-dim": "#82dde6",
+              "tertiary": "#9128ad",
+              "error-dim": "#9f0519",
+              "on-tertiary-container": "#55006b",
+              "on-tertiary-fixed": "#2e003b",
+              "on-error": "#ffefee",
+              "secondary-container": "#ffc96f",
+              "surface-variant": "#d7dede",
+              "on-secondary-fixed-variant": "#6c4a00",
+              "on-secondary": "#fff1df",
+              "error": "#b31b25",
+              "inverse-primary": "#99f4fd",
+              "outline-variant": "#a9aeae",
+              "surface": "#f3f7f7",
+              "error-container": "#fb5151",
+              "secondary-fixed-dim": "#ffb623",
+              "outline": "#737878",
+              "tertiary-dim": "#8315a0",
+              "primary-container": "#91ebf4",
+              "surface-bright": "#f3f7f7",
+              "on-background": "#2b3030",
+              "secondary-fixed": "#ffc96f",
+              "on-primary-container": "#00575d",
+              "on-secondary-container": "#614100",
+              "surface-container-lowest": "#ffffff",
+              "tertiary-container": "#ea8cff",
+              "surface-container-high": "#dde4e4",
+              "on-primary": "#cffbff",
+              "background": "#f3f7f7",
+              "on-primary-fixed-variant": "#006268",
+              "inverse-surface": "#0a0f0f",
+              "on-tertiary-fixed-variant": "#63007c",
+              "inverse-on-surface": "#999e9e",
+              "surface-tint": "#00666d"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Be Vietnam Pro"],
+              "label": ["Plus Jakarta Sans"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .video-card-shadow {
+            box-shadow: 0 12px 0 0 rgba(0, 0, 0, 0.05);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface font-body text-on-surface antialiased custom-scrollbar">
+<!-- Top AppBar (Kids Context: Simplified with Avatar) -->
+<header class="flex justify-between items-center w-full px-6 py-6 sticky top-0 z-40 bg-surface/80 backdrop-blur-xl">
+<div class="flex items-center gap-3">
+<div class="w-14 h-14 rounded-full bg-tertiary-container flex items-center justify-center border-4 border-surface-container-lowest shadow-sm">
+<img alt="Kid Avatar" class="w-10 h-10" data-alt="cute 3d stylized character icon of a happy child with colorful headphones and bright eyes" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7r5qu6HPbgqve2_z_Oha4lWlviefBKImc872TZNViP_T_FHW46JNtMgCD64ai62Pu-ESU-DtgBGay7QFwkx8rRjitaqeVpoJl6ceBfOiO8K4r2Ck6TEX6zCjFiQFchL1c55PJy3maq12LHvg9TVE2vHTIlt-cpV2IrJ8Eh5UYZi6lq_F8gXSyCxp2yXWN7oQUFhYyH9IxOQ3DbL3eQp9IoCIT9S8kHk4i6maSnGcKGnQMhY-LhP1mOzAcbVoJw_gfgeCPeCkZ4Nm-"/>
+</div>
+<h1 class="font-headline text-2xl font-extrabold tracking-tight text-primary">Hi, Explorer!</h1>
+</div>
+<button class="w-12 h-12 rounded-full bg-surface-container-lowest flex items-center justify-center text-on-surface-variant hover:bg-surface-container transition-colors active:scale-90 duration-150 shadow-sm">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+</header>
+<main class="px-6 pb-32">
+<!-- Category Pill Selector -->
+<section class="flex gap-4 overflow-x-auto pb-8 custom-scrollbar">
+<button class="bg-secondary-container text-on-secondary-container px-8 py-4 rounded-full font-headline font-bold text-lg whitespace-nowrap active:scale-95 transition-transform shadow-sm">
+                For You
+            </button>
+<button class="bg-surface-container-lowest text-on-surface-variant px-8 py-4 rounded-full font-headline font-bold text-lg whitespace-nowrap active:scale-95 transition-transform">
+                Animals
+            </button>
+<button class="bg-surface-container-lowest text-on-surface-variant px-8 py-4 rounded-full font-headline font-bold text-lg whitespace-nowrap active:scale-95 transition-transform">
+                Space
+            </button>
+<button class="bg-surface-container-lowest text-on-surface-variant px-8 py-4 rounded-full font-headline font-bold text-lg whitespace-nowrap active:scale-95 transition-transform">
+                Music
+            </button>
+</section>
+<!-- Bento Feed Layout -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Large Hero Card -->
+<div class="md:col-span-2 group relative bg-surface-container-lowest rounded-lg overflow-hidden video-card-shadow transition-transform hover:scale-[1.02] cursor-pointer">
+<div class="aspect-video w-full overflow-hidden relative">
+<img alt="Featured Video" class="w-full h-full object-cover" data-alt="vibrant animated scene of a friendly blue dragon flying over a candy-colored mountain range under a bright purple sky" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8Wt20XlgeVqxcc4IVnauUAS7MFmqqOE-mgioUyZD0_rFz-DcNgzaZ-aQBYoecPtrMDvcdGakFJB4lzFtatvWjTEX69VJBEJWo7yksOGE2wfB1WM_ALIWolspdYVI3FV3TRm795qC-Pu8xDodXmE-2WWa3uQSplytL1VwGJJYWOOL0B3aSQbDx35VO9-I0vrE9AILSejxjpULRlrKma15shx26dVE1HNrnGIoQ0ulgP6AIj6J0WnS5Hpybrdt89ASWAorQdcgHudnX"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/40 to-transparent"></div>
+<div class="absolute bottom-6 right-6 w-16 h-16 bg-secondary text-on-secondary rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+</div>
+<div class="p-6 bg-secondary-container">
+<h2 class="font-headline text-2xl font-black text-on-secondary-container">Dino's Big Adventure!</h2>
+<p class="font-body text-on-secondary-container opacity-80 mt-1">Learning about friendship with Dino.</p>
+</div>
+</div>
+<!-- Smaller Bento Card (Purple) -->
+<div class="group relative bg-surface-container-lowest rounded-lg overflow-hidden video-card-shadow transition-transform hover:scale-[1.02] cursor-pointer">
+<div class="aspect-square w-full overflow-hidden relative">
+<img alt="Forest Video" class="w-full h-full object-cover" data-alt="close-up of a tiny glowing ladybug walking on a large dewy leaf in a magical sunlit forest with golden bokeh" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqaGA4wi8fMDkhkdY61uv6QhHaFyW6l8mULlMa4v0skMYLV-57D4d9aUScEXZ5TuyNq5NGoSKOWk5sOf2Df0-sQL0mmbq6OrSrbV1CJswZuqHIi90sXYm_4xDv5f9iKgToqIGhVT3D4PRB0x6DHpA1J5XMB5y09vYm3VJTBZx-rgqFT21e-UjXx23dUKElBu5GwAv1jE5hEiOQjec-CnSdr3dWoxmtsy7PAQHGd6-mw-TJUh51pON65hVU9inOKVU6SHQ7aC1XPAQc"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/40 to-transparent"></div>
+</div>
+<div class="p-6 bg-tertiary-container">
+<h2 class="font-headline text-xl font-black text-on-tertiary-container uppercase tracking-tight">Tiny Forest Friends</h2>
+</div>
+</div>
+<!-- Smaller Bento Card (Amber) -->
+<div class="group relative bg-surface-container-lowest rounded-lg overflow-hidden video-card-shadow transition-transform hover:scale-[1.02] cursor-pointer">
+<div class="aspect-square w-full overflow-hidden relative">
+<img alt="Mountain Video" class="w-full h-full object-cover" data-alt="whimsical 3d render of a bright yellow sun wearing sunglasses smiling over snowy blue peaks and a winding river" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMQCK8r0Z8-zcBOGRp2YG1ZlR4jSIwnZs4U0k9lheHNYBMngfBu_MqpUXlSFuBpDVcfdIF3GGjeIrmSvdYWYWMkaK461I8mcg3pypZwYf407C5UZ5oKNOguJMlLpMDJAEWcOlT3hmQm9qdz08ITyC6f62CZaokLF1GLMgT3HkSkpqBZbDjSeS-aJO5ew7UNjP3PMt1Yg6DpBANxqFL9orZSY7c0Mn1rHd8305gg72GM-kwPoUdEwZgR2p_c-QWsHKRk31o83yjS295"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/40 to-transparent"></div>
+</div>
+<div class="p-6 bg-primary-container">
+<h2 class="font-headline text-xl font-black text-on-primary-container uppercase tracking-tight">Singing Snow Peaks</h2>
+</div>
+</div>
+<!-- Wide Card -->
+<div class="md:col-span-2 group relative bg-surface-container-lowest rounded-lg overflow-hidden video-card-shadow transition-transform hover:scale-[1.01] cursor-pointer">
+<div class="aspect-[21/9] w-full overflow-hidden relative">
+<img alt="Space Video" class="w-full h-full object-cover" data-alt="vibrant 3d animation of colorful planets with rings orbiting a glowing neon sun in a starry galaxy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJRMdmzxTwvqxokxnd9dA67jWS_NQGbzP7r09wUmvNZd1Eb-3DIvXm0HHcgpyLl4S9-LMsKSjg_2nm44v4WMGe3FLKafjHDjPTW1Q3-R7lWBvRQoWebZfoqay2RWDuv1_ukoX0_3n4NYHBk-H1_V5tRhJ7Yd3_li5BKsQetxSdvUOHV_3wfFtD43ZkQl8r0GagprXcdc7hNuutqffMcPF_5yooP8fUjps1LULIR76NEfh_tYe90aLNRf4ojwIa6z59cwVn-_lu0VLN"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/40 to-transparent"></div>
+</div>
+<div class="p-6 flex justify-between items-center bg-surface-container-lowest">
+<div>
+<h2 class="font-headline text-xl font-black text-on-surface uppercase tracking-tight">Journey Through the Stars</h2>
+<span class="text-xs font-bold text-secondary uppercase tracking-widest bg-secondary-container px-2 py-1 rounded">New</span>
+</div>
+<span class="material-symbols-outlined text-primary text-4xl">rocket_launch</span>
+</div>
+</div>
+</div>
+</main>
+<!-- Navigation Bar (Kids Mode: High Contrast & Large Targets) -->
+<!-- Applying style_shell_layout, style_bg_color, style_shadows_and_elevation from JSON -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-8 pt-4 bg-[#ffffff] dark:bg-slate-900 shadow-[0_-8px_24px_rgba(0,0,0,0.06)] rounded-t-[3rem]">
+<!-- Tab: Videos (Active) -->
+<!-- Applying style_active_navigation and style_typography -->
+<button class="flex flex-col items-center justify-center bg-[#ffc96f] dark:bg-amber-700 text-[#7b5400] dark:text-amber-50 rounded-[2rem] px-8 py-3 scale-110 active:scale-95 transition-all duration-200">
+<span class="material-symbols-outlined text-3xl mb-1" data-icon="subscriptions" style="font-variation-settings: 'FILL' 1;">subscriptions</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-black uppercase tracking-widest">Videos</span>
+</button>
+<!-- Tab: Play (Inactive) -->
+<!-- Applying style_inactive_navigation and style_universal_hover -->
+<button class="flex flex-col items-center justify-center text-[#2b3030] dark:text-slate-400 opacity-60 hover:scale-105 hover:opacity-100 transition-all">
+<span class="material-symbols-outlined text-3xl mb-1" data-icon="play_circle">play_circle</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-black uppercase tracking-widest">Play</span>
+</button>
+<!-- Tab: Timer (Inactive) -->
+<button class="flex flex-col items-center justify-center text-[#2b3030] dark:text-slate-400 opacity-60 hover:scale-105 hover:opacity-100 transition-all">
+<span class="material-symbols-outlined text-3xl mb-1" data-icon="hourglass_top">hourglass_top</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-black uppercase tracking-widest">Timer</span>
+</button>
+</nav>
+<!-- Floating Parental Control (Safety Gate Trigger) -->
+<div class="fixed top-24 right-6 z-30">
+<button class="w-16 h-16 rounded-full bg-tertiary shadow-lg flex items-center justify-center text-on-tertiary active:scale-90 transition-transform border-4 border-surface-container-lowest">
+<span class="material-symbols-outlined text-3xl" data-icon="lock" style="font-variation-settings: 'FILL' 1;">lock</span>
+</button>
+</div>
+</body></html>

@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Be+Vietnam+Pro:wght@400;500;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-dim": "#ced6d6",
+                        "surface": "#f3f7f7",
+                        "secondary": "#7b5400",
+                        "on-tertiary-fixed": "#2e003b",
+                        "inverse-on-surface": "#999e9e",
+                        "tertiary": "#9128ad",
+                        "on-tertiary-fixed-variant": "#63007c",
+                        "error": "#b31b25",
+                        "on-tertiary-container": "#55006b",
+                        "on-primary-fixed": "#004348",
+                        "primary-fixed-dim": "#82dde6",
+                        "tertiary-fixed": "#ea8cff",
+                        "secondary-dim": "#6b4900",
+                        "on-primary": "#cffbff",
+                        "tertiary-container": "#ea8cff",
+                        "on-secondary": "#fff1df",
+                        "on-primary-fixed-variant": "#006268",
+                        "outline-variant": "#a9aeae",
+                        "on-surface-variant": "#585c5d",
+                        "inverse-surface": "#0a0f0f",
+                        "error-container": "#fb5151",
+                        "secondary-fixed": "#ffc96f",
+                        "on-secondary-fixed-variant": "#6c4a00",
+                        "error-dim": "#9f0519",
+                        "surface-container": "#e4e9e9",
+                        "background": "#f3f7f7",
+                        "primary": "#00666d",
+                        "surface-container-high": "#dde4e4",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed-dim": "#ffb623",
+                        "inverse-primary": "#99f4fd",
+                        "primary-fixed": "#91ebf4",
+                        "outline": "#737878",
+                        "on-error": "#ffefee",
+                        "on-primary-container": "#00575d",
+                        "surface-container-low": "#edf2f2",
+                        "surface-tint": "#00666d",
+                        "on-error-container": "#570008",
+                        "tertiary-fixed-dim": "#e377fc",
+                        "surface-bright": "#f3f7f7",
+                        "tertiary-dim": "#8315a0",
+                        "surface-container-highest": "#d7dede",
+                        "on-background": "#2b3030",
+                        "primary-dim": "#00595f",
+                        "surface-variant": "#d7dede",
+                        "on-secondary-container": "#614100",
+                        "secondary-container": "#ffc96f",
+                        "on-secondary-fixed": "#483000",
+                        "primary-container": "#91ebf4",
+                        "on-surface": "#2b3030",
+                        "on-tertiary": "#ffeefd"
+                    },
+                    fontFamily: {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Be Vietnam Pro"],
+                        "label": ["Plus Jakarta Sans"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #f3f7f7;
+            color: #2b3030;
+            font-family: 'Be Vietnam Pro', sans-serif;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface">
+<!-- NavigationDrawer (Sidebar) -->
+<aside class="fixed inset-y-0 left-0 z-50 w-72 bg-[#ffffff] dark:bg-slate-900 shadow-xl dark:shadow-none transition-all duration-300 ease-in-out md:flex flex-col hidden">
+<div class="px-6 py-8 flex items-center gap-3">
+<div class="w-12 h-12 rounded-full bg-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-2xl" data-icon="account_circle">account_circle</span>
+</div>
+<div>
+<p class="font-headline text-on-surface font-bold text-lg leading-tight">Parental Control</p>
+<p class="font-body text-on-surface-variant text-sm">Admin Mode</p>
+</div>
+</div>
+<nav class="flex-1 mt-4">
+<div class="space-y-2 px-4">
+<a class="flex items-center gap-4 text-[#2b3030] dark:text-slate-400 px-4 py-3 hover:bg-[#f3f7f7] dark:hover:bg-slate-800 transition-colors rounded-full" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-['Be_Vietnam_Pro'] text-base font-medium">Dashboard</span>
+</a>
+<!-- Active Tab: History -->
+<a class="flex items-center gap-4 bg-[#91ebf4] dark:bg-cyan-900 text-[#006064] dark:text-cyan-100 rounded-full px-4 py-3" href="#">
+<span class="material-symbols-outlined" data-icon="history" style="font-variation-settings: 'FILL' 1;">history</span>
+<span class="font-['Be_Vietnam_Pro'] text-base font-medium">History</span>
+</a>
+<a class="flex items-center gap-4 text-[#2b3030] dark:text-slate-400 px-4 py-3 hover:bg-[#f3f7f7] dark:hover:bg-slate-800 transition-colors rounded-full" href="#">
+<span class="material-symbols-outlined" data-icon="add_circle">add_circle</span>
+<span class="font-['Be_Vietnam_Pro'] text-base font-medium">Add Video</span>
+</a>
+<a class="flex items-center gap-4 text-[#2b3030] dark:text-slate-400 px-4 py-3 hover:bg-[#f3f7f7] dark:hover:bg-slate-800 transition-colors rounded-full" href="#">
+<span class="material-symbols-outlined" data-icon="timer">timer</span>
+<span class="font-['Be_Vietnam_Pro'] text-base font-medium">Time Limits</span>
+</a>
+<a class="flex items-center gap-4 text-[#2b3030] dark:text-slate-400 px-4 py-3 hover:bg-[#f3f7f7] dark:hover:bg-slate-800 transition-colors rounded-full" href="#">
+<span class="material-symbols-outlined" data-icon="lock">lock</span>
+<span class="font-['Be_Vietnam_Pro'] text-base font-medium">Safety Gate</span>
+</a>
+</div>
+</nav>
+<div class="p-6 mb-4">
+<div class="bg-surface-container-low p-4 rounded-lg flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary" data-icon="shield">shield</span>
+</div>
+<div>
+<p class="font-headline text-xs font-bold uppercase tracking-wider text-on-surface-variant">System Status</p>
+<p class="font-body text-sm font-semibold text-primary">All Safe</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="md:ml-72 min-h-screen">
+<!-- TopAppBar -->
+<header class="bg-[#f3f7f7] dark:bg-slate-900 flex justify-between items-center w-full px-6 py-4 sticky top-0 z-40">
+<div class="flex items-center gap-4">
+<div class="md:hidden">
+<span class="material-symbols-outlined text-[#006064]" data-icon="menu">menu</span>
+</div>
+<h1 class="font-['Plus_Jakarta_Sans'] text-2xl font-bold tracking-tight text-[#006064] dark:text-cyan-400">SafeVideo Admin</h1>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#006064] dark:text-cyan-400" data-icon="settings">settings</span>
+<div class="w-10 h-10 rounded-full bg-surface-container overflow-hidden">
+<img alt="Parent Profile" class="w-full h-full object-cover" data-alt="Portrait of a friendly parent with a soft smile in a bright indoor setting, warm lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmz76Mc87o5y9DMm-V_TOfiugmOiofPZekqsSaHD359p957O812YJViGCICWWxshvYm1zKgYnDRDTblqeW6fydZjvPiwH5CYPkbgiPTZ9EV_ZGuKQYMvwtJ9jAeaZJgUbF373u9NqN3eq9PyiKU3VXtTAxM164ZaFU0bu03grWO_EMP8JgQKVgbXEEfP83EtmH_cjUDPjG4D5iLhQ6I6KLp88heMXh46lcNPYAy58Y2u2I1Dz1YBmXIZMgMr6K9HYUz3YEuzfsUPtg"/>
+</div>
+</div>
+</header>
+<div class="bg-[#edf2f2] dark:bg-slate-800 h-px w-full"></div>
+<!-- History Content -->
+<div class="max-w-6xl mx-auto px-6 py-8">
+<!-- Summary Card: Total Watch Time -->
+<section class="mb-10">
+<div class="relative overflow-hidden bg-primary p-8 rounded-lg shadow-xl text-on-primary">
+<div class="absolute -right-12 -top-12 w-48 h-48 bg-primary-container opacity-20 rounded-full"></div>
+<div class="absolute right-24 bottom-0 w-32 h-32 bg-primary-container opacity-10 rounded-full"></div>
+<div class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
+<div>
+<p class="font-headline text-primary-fixed uppercase tracking-[0.2em] text-xs font-black mb-2">Insights</p>
+<h2 class="font-headline text-3xl font-bold tracking-tight mb-1">Total Watch Time Today</h2>
+<p class="font-body text-on-primary/80">Great job! Screen time is within safe limits.</p>
+</div>
+<div class="flex items-center gap-4 bg-white/10 backdrop-blur-md px-8 py-4 rounded-xl border border-white/10">
+<span class="material-symbols-outlined text-4xl" data-icon="schedule" style="font-variation-settings: 'FILL' 1;">schedule</span>
+<div>
+<p class="text-4xl font-headline font-extrabold tracking-tighter">1h 42m</p>
+<p class="text-xs uppercase tracking-widest font-black opacity-60">Daily Limit: 2h 00m</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Video History List -->
+<section>
+<div class="flex items-center justify-between mb-6">
+<h3 class="font-headline text-xl font-bold text-on-surface">Watching History</h3>
+<div class="flex gap-2">
+<button class="px-4 py-2 bg-surface-container rounded-full text-sm font-medium hover:bg-surface-container-high transition-colors">Today</button>
+<button class="px-4 py-2 text-on-surface-variant hover:bg-surface-container rounded-full text-sm font-medium transition-colors">Yesterday</button>
+</div>
+</div>
+<div class="space-y-6">
+<!-- Video Entry 1 -->
+<div class="group bg-surface-container-low rounded-lg p-5 flex flex-col md:flex-row gap-6 hover:bg-surface-container transition-colors relative">
+<div class="w-full md:w-56 h-32 rounded-lg overflow-hidden relative shrink-0">
+<img alt="Nature Documentary" class="w-full h-full object-cover" data-alt="Vibrant close-up of a colorful tropical bird in a lush rainforest, soft cinematic lighting, 4k video thumbnail style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5CmQIHy46H_TzvR37MyJWUmMQ1v0q70DxjuCte2sjnZaa3phxPUPeV17PNYMkB5BefUzKN9Nacp8wqk3KtdXIh4DqC-ovtwkjQIPFajH4wTcUQ9yVWnhGRzwUQ4gqf5FzM8pOFK0Jm0tuiOOUAr5c8n-dK_mN8Cyzgjv9CkUl_CzXISFHwKv22NPbVQlF184dqU3oqRXHUAZQnIDvpf8f1TFquWu2Qt7fpxLkXQDnTbxttUbksAq0LeF1wlrqyDa4FhTIRd8J-oLB"/>
+<div class="absolute bottom-2 right-2 bg-black/70 text-white text-[10px] font-bold px-2 py-0.5 rounded">12:45</div>
+</div>
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start">
+<h4 class="font-headline text-lg font-bold text-on-surface group-hover:text-primary transition-colors">Exploring the Blue Amazon</h4>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-error transition-colors" data-icon="more_vert">more_vert</span>
+</div>
+<p class="font-body text-on-surface-variant text-sm mt-1">Channel: Nature Kids TV</p>
+</div>
+<div class="flex flex-wrap gap-y-2 gap-x-6 mt-4">
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-lg" data-icon="calendar_today">calendar_today</span>
+<span class="text-xs font-medium">Oct 24, 2023 • 3:45 PM</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-lg" data-icon="visibility">visibility</span>
+<span class="text-xs font-medium">Duration: 12m 45s (Full)</span>
+</div>
+<div class="ml-auto">
+<span class="inline-flex items-center px-3 py-1 bg-primary-fixed text-on-primary-fixed rounded-full text-[10px] font-bold uppercase tracking-wider">Education</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Video Entry 2 -->
+<div class="group bg-surface-container-low rounded-lg p-5 flex flex-col md:flex-row gap-6 hover:bg-surface-container transition-colors relative">
+<div class="w-full md:w-56 h-32 rounded-lg overflow-hidden relative shrink-0">
+<img alt="Cartoon Adventures" class="w-full h-full object-cover" data-alt="3D animated characters in a colorful fantasy landscape with giant mushrooms and a bright blue sky, cheerful atmosphere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDT4ITIKLa4lqDG_ZCZ-HNJNGAMLgT7y6S-5PUQVRGladjDoseYG-7-Ap8tBZ6majJYaLkO5jV7vS7KXjj6tqeWvsngkbhfZUNrJRaKOa4XWa2oxMcTJOVfe4penNBpGu0PTcCEAZQmkbFnp2SHgzcDGnnAk7nE7cntzz0mrH4dKCGeO3k8SARScI86ds_dMayydm6ghnUTqKIsdqCI_-T0BBF4MaD7QzT_AhNghvSZxIw_oEr6M8AgGoBddX4OrOFOnGJwrG3x1QAI"/>
+<div class="absolute bottom-2 right-2 bg-black/70 text-white text-[10px] font-bold px-2 py-0.5 rounded">05:20</div>
+</div>
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start">
+<h4 class="font-headline text-lg font-bold text-on-surface group-hover:text-primary transition-colors">Space Explorers: The Red Planet</h4>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-error transition-colors" data-icon="more_vert">more_vert</span>
+</div>
+<p class="font-body text-on-surface-variant text-sm mt-1">Channel: Cartoon World</p>
+</div>
+<div class="flex flex-wrap gap-y-2 gap-x-6 mt-4">
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-lg" data-icon="calendar_today">calendar_today</span>
+<span class="text-xs font-medium">Oct 24, 2023 • 2:15 PM</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-lg" data-icon="visibility">visibility</span>
+<span class="text-xs font-medium">Duration: 05m 20s (Full)</span>
+</div>
+<div class="ml-auto">
+<span class="inline-flex items-center px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full text-[10px] font-bold uppercase tracking-wider">Entertainment</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Video Entry 3 -->
+<div class="group bg-surface-container-low rounded-lg p-5 flex flex-col md:flex-row gap-6 hover:bg-surface-container transition-colors relative">
+<div class="w-full md:w-56 h-32 rounded-lg overflow-hidden relative shrink-0">
+<img alt="DIY Crafting" class="w-full h-full object-cover" data-alt="Close-up of hands crafting with colorful paper, scissors, and glue on a bright white table, high-angle shots" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSvsOquIhHthiPRkHdgySuBZEUpYd2dntAvW4FCV1H2tKTzMB79ufo5jlULNSuKTZ959rZzQIV_49n1bKpR7MTQLwWpG1-xfQm9Ja1eqABvrtc5AfNu8rmU_MsUmvahlDlout__F4VurHw6lpmTamNpZwJz3kTNd2ANwuP22Nu353nxQs0PgS5p2O7MS0X5L7Uh5xv1HoAOmu3XQcdGTb9pkA35R42-3FV-AF2wCRf1vY_W1hb5F8BK-66JhMJ3XSFXSbZ5qP1e7wF"/>
+<div class="absolute bottom-2 right-2 bg-black/70 text-white text-[10px] font-bold px-2 py-0.5 rounded">18:30</div>
+</div>
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start">
+<h4 class="font-headline text-lg font-bold text-on-surface group-hover:text-primary transition-colors">DIY Paper Dragons Tutorial</h4>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-error transition-colors" data-icon="more_vert">more_vert</span>
+</div>
+<p class="font-body text-on-surface-variant text-sm mt-1">Channel: Creative Kids Lab</p>
+</div>
+<div class="flex flex-wrap gap-y-2 gap-x-6 mt-4">
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-lg" data-icon="calendar_today">calendar_today</span>
+<span class="text-xs font-medium">Oct 24, 2023 • 1:00 PM</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-lg" data-icon="visibility">visibility</span>
+<span class="text-xs font-medium">Duration: 10m 00s (Partial)</span>
+</div>
+<div class="ml-auto">
+<span class="inline-flex items-center px-3 py-1 bg-tertiary-container text-on-tertiary-container rounded-full text-[10px] font-bold uppercase tracking-wider">Hobbies</span>
+</div>
+</div>
+<!-- Partial progress indicator -->
+<div class="w-full h-1 bg-surface-container-high rounded-full mt-3 overflow-hidden">
+<div class="bg-tertiary w-[54%] h-full"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-12 flex justify-center">
+<button class="px-8 py-3 bg-primary text-on-primary rounded-full font-bold hover:scale-105 transition-transform">
+                        Load More History
+                    </button>
+</div>
+</section>
+</div>
+</main>
+<!-- BottomNavBar (Visible on Mobile) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-4 bg-[#ffffff] dark:bg-slate-900 rounded-t-[3rem] shadow-[0_-8px_24px_rgba(0,0,0,0.06)] md:hidden">
+<a class="flex flex-col items-center justify-center text-[#2b3030] dark:text-slate-400 opacity-60 hover:scale-105 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="subscriptions">subscriptions</span>
+<span class="font-['Plus_Jakarta_Sans'] text-xs font-black uppercase tracking-widest mt-1">Videos</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-[#ffc96f] dark:bg-amber-700 text-[#7b5400] dark:text-amber-50 rounded-[2rem] px-6 py-2 scale-110" href="#">
+<span class="material-symbols-outlined" data-icon="history" style="font-variation-settings: 'FILL' 1;">history</span>
+<span class="font-['Plus_Jakarta_Sans'] text-xs font-black uppercase tracking-widest mt-1">History</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#2b3030] dark:text-slate-400 opacity-60 hover:scale-105 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="play_circle">play_circle</span>
+<span class="font-['Plus_Jakarta_Sans'] text-xs font-black uppercase tracking-widest mt-1">Play</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#2b3030] dark:text-slate-400 opacity-60 hover:scale-105 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="hourglass_top">hourglass_top</span>
+<span class="font-['Plus_Jakarta_Sans'] text-xs font-black uppercase tracking-widest mt-1">Timer</span>
+</a>
+</nav>
+</body></html>

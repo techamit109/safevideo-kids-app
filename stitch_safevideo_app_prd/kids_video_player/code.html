@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SafeVideo - Kids Play</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Be_Vietnam_Pro:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary-dim": "#00595f",
+                        "surface-dim": "#ced6d6",
+                        "surface-container": "#e4e9e9",
+                        "on-error-container": "#570008",
+                        "on-surface": "#2b3030",
+                        "primary-fixed": "#91ebf4",
+                        "on-secondary-fixed": "#483000",
+                        "primary": "#00666d",
+                        "surface-container-low": "#edf2f2",
+                        "on-surface-variant": "#585c5d",
+                        "on-tertiary": "#ffeefd",
+                        "surface-container-highest": "#d7dede",
+                        "secondary-dim": "#6b4900",
+                        "tertiary-fixed-dim": "#e377fc",
+                        "tertiary-fixed": "#ea8cff",
+                        "on-primary-fixed": "#004348",
+                        "secondary": "#7b5400",
+                        "primary-fixed-dim": "#82dde6",
+                        "tertiary": "#9128ad",
+                        "error-dim": "#9f0519",
+                        "on-tertiary-container": "#55006b",
+                        "on-tertiary-fixed": "#2e003b",
+                        "on-error": "#ffefee",
+                        "secondary-container": "#ffc96f",
+                        "surface-variant": "#d7dede",
+                        "on-secondary-fixed-variant": "#6c4a00",
+                        "on-secondary": "#fff1df",
+                        "error": "#b31b25",
+                        "inverse-primary": "#99f4fd",
+                        "outline-variant": "#a9aeae",
+                        "surface": "#f3f7f7",
+                        "error-container": "#fb5151",
+                        "secondary-fixed-dim": "#ffb623",
+                        "outline": "#737878",
+                        "tertiary-dim": "#8315a0",
+                        "primary-container": "#91ebf4",
+                        "surface-bright": "#f3f7f7",
+                        "on-background": "#2b3030",
+                        "secondary-fixed": "#ffc96f",
+                        "on-primary-container": "#00575d",
+                        "on-secondary-container": "#614100",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-container": "#ea8cff",
+                        "surface-container-high": "#dde4e4",
+                        "on-primary": "#cffbff",
+                        "background": "#f3f7f7",
+                        "on-primary-fixed-variant": "#006268",
+                        "inverse-surface": "#0a0f0f",
+                        "on-tertiary-fixed-variant": "#63007c",
+                        "inverse-on-surface": "#999e9e",
+                        "surface-tint": "#00666d"
+                    },
+                    fontFamily: {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Be Vietnam Pro"],
+                        "label": ["Plus Jakarta Sans"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .fill-icon {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface font-body text-on-surface select-none overflow-hidden">
+<!-- Top Navigation Bar (Kids Style) -->
+<header class="fixed top-0 left-0 w-full z-40 px-6 py-4 flex justify-between items-center bg-transparent">
+<button class="group flex items-center justify-center bg-secondary-container text-on-secondary-container w-16 h-16 rounded-xl shadow-lg active:scale-95 transition-all">
+<span class="material-symbols-outlined text-4xl" data-icon="arrow_back">arrow_back</span>
+</button>
+<div class="bg-surface-container-lowest/90 backdrop-blur-md px-8 py-3 rounded-full shadow-sm flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary fill-icon" data-icon="hourglass_top" style="font-variation-settings: 'FILL' 1;">hourglass_top</span>
+<span class="font-headline font-extrabold text-secondary tracking-tight">12 MINS LEFT</span>
+</div>
+<div class="w-16 h-16 bg-surface-container-lowest rounded-full p-1 shadow-sm">
+<img alt="Kid Profile" class="w-full h-full rounded-full object-cover" data-alt="a friendly illustrated character avatar for a child with bright colors and a happy expression" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLHbIWn098SzkMUOO0NtLkaMldNWlovkJ249_dEEnz3QzJNsE7hRRW_orb6O-YAXnYbdIAKZCOAICIccTnXw45iH_k0gyLSLUeOKtcYwEgMGY2U8Xe1TDjgy7Z-dtx26xWsYetEs-wipQoXkpuj1A1NCXGFpEf32LlUEgKeKwJmuHzTOIjZjOGMg6ksPbxHz2SZkaYrLPcWZJKB1iRFPf2Wkxu-DPjN6yqhx4Lyczr9tfEcGlnB40_fbBSztB51pWWV8igVr63isbx"/>
+</div>
+</header>
+<!-- Main Video Canvas -->
+<main class="relative h-screen w-screen flex flex-col items-center justify-center p-4">
+<!-- Video Container (The Glassmorphism Shell) -->
+<div class="relative w-full max-w-6xl aspect-video rounded-xl overflow-hidden shadow-2xl bg-on-surface flex items-center justify-center">
+<!-- Simulated Video Content -->
+<img class="absolute inset-0 w-full h-full object-cover opacity-80" data-alt="whimsical colorful 3D animation of a friendly blue monster playing in a sunny meadow with giant flowers and a rainbow background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBenHyYGdIb_14AX4-XChBix_ZabAcZkQewUfn57Szeo7QXzaa2LsjiKYX4TtixgQ0RetxDJi8QDq7mFBvaI-y3w8t5Vr3PqAzKuQHlUbFMs_aN11-7MoPq2FTDU6I7LwWjc0FNjg9WLV2WLZuZ5kMcpWW9XOygniv2_dK3kPIDi_r9VVCAAxboDeguCCRypOawHDfqP3ogAhjs7bEPcmv4Xh-yyWxqdAypuY92TltBCcEzNkxF_u_OXDY1eWJIgIp5diCMXGKLUhOU"/>
+<!-- Video Overlay Controls (Central) -->
+<div class="relative z-10 flex items-center gap-8 md:gap-16">
+<!-- Rewind (Decorative/Functional) -->
+<button class="bg-surface-container-lowest/20 backdrop-blur-md text-surface-container-lowest w-20 h-20 md:w-28 md:h-28 rounded-full flex items-center justify-center active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-5xl" data-icon="replay_10">replay_10</span>
+</button>
+<!-- Play Button (Signature Feature) -->
+<button class="bg-secondary text-on-secondary w-32 h-32 md:w-48 md:h-48 rounded-full flex items-center justify-center shadow-[0_0_60px_rgba(123,84,0,0.4)] hover:shadow-[0_0_80px_rgba(123,84,0,0.6)] active:scale-95 transition-all">
+<span class="material-symbols-outlined text-7xl md:text-9xl fill-icon" data-icon="play_arrow" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+<!-- Skip/Next -->
+<button class="bg-surface-container-lowest/20 backdrop-blur-md text-surface-container-lowest w-20 h-20 md:w-28 md:h-28 rounded-full flex items-center justify-center active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-5xl" data-icon="skip_next">skip_next</span>
+</button>
+</div>
+<!-- Custom Progress Bar -->
+<div class="absolute bottom-8 left-8 right-8 h-6 bg-surface-container-highest/30 backdrop-blur-sm rounded-full overflow-hidden">
+<div class="h-full w-2/3 bg-secondary rounded-full shadow-[0_0_15px_rgba(255,182,35,0.5)]"></div>
+</div>
+</div>
+<!-- Video Info Section -->
+<div class="mt-8 w-full max-w-6xl px-4 flex justify-between items-end">
+<div class="flex flex-col">
+<h1 class="font-headline text-3xl md:text-5xl font-black text-primary tracking-tight">Funny Monster Dance Party</h1>
+<p class="font-body text-xl font-medium text-on-surface-variant mt-2">Volume 1 • Episode 4</p>
+</div>
+<!-- Secondary Actions -->
+<div class="flex gap-4">
+<button class="bg-primary-container text-on-primary-container px-8 py-4 rounded-lg font-headline font-bold text-lg active:bounce-sm flex items-center gap-2">
+<span class="material-symbols-outlined fill-icon" data-icon="favorite" style="font-variation-settings: 'FILL' 1;">favorite</span>
+                    LOVE IT!
+                </button>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Bar (From JSON Mapping) -->
+<!-- Destination Rule: Suppressed on specific task-focused screen like video player to maximize immersion -->
+<!-- However, providing a 'Safe Exit' navigation if required by environment -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-8 pt-4 pointer-events-none">
+<!-- Floating Active Tab Indicator -->
+<div class="bg-surface-container-lowest/80 backdrop-blur-xl px-12 py-6 rounded-xl flex gap-12 pointer-events-auto shadow-2xl">
+<button class="flex flex-col items-center justify-center text-on-surface-variant opacity-60 hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-3xl" data-icon="subscriptions">subscriptions</span>
+<span class="font-headline text-[10px] font-black uppercase tracking-widest mt-1">Videos</span>
+</button>
+<button class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-lg px-8 py-3 scale-110 shadow-lg">
+<span class="material-symbols-outlined text-3xl fill-icon" data-icon="play_circle" style="font-variation-settings: 'FILL' 1;">play_circle</span>
+<span class="font-headline text-[10px] font-black uppercase tracking-widest mt-1">Play</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant opacity-60 hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-3xl" data-icon="hourglass_top">hourglass_top</span>
+<span class="font-headline text-[10px] font-black uppercase tracking-widest mt-1">Timer</span>
+</button>
+</div>
+</nav>
+<!-- Decorative Safety Elements (Vibrant Depth) -->
+<div class="fixed -bottom-24 -left-24 w-96 h-96 bg-primary-fixed opacity-20 blur-[100px] rounded-full pointer-events-none"></div>
+<div class="fixed -top-24 -right-24 w-96 h-96 bg-secondary-fixed opacity-20 blur-[100px] rounded-full pointer-events-none"></div>
+</body></html>
