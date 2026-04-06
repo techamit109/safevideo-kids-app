@@ -52,7 +52,15 @@ window.startKidPlayer = function(videoId) {
         height: '500',
         width: '100%',
         videoId: videoId,
-        playerVars: { 'autoplay': 1, 'modestbranding': 1, 'rel': 0 },
+        playerVars: { 
+            'autoplay': 1, 
+            'modestbranding': 1, 
+            'rel': 0,
+            'controls': 0,
+            'disablekb': 1,
+            'fs': 0,
+            'iv_load_policy': 3
+        },
         events: {
             'onStateChange': onPlayerStateChange
         }
@@ -350,14 +358,31 @@ function renderKidPlayer() {
     return `
         <button class="btn-back" onclick="navigate('kid','kidHome')" id="btn-back-home">⬅ Back to Home</button>
         <div class="player-container" style="position:relative; max-width: 900px; margin: 0 auto; min-height: 500px;">
-            <!-- Invisible click-intercept shields to block outbound links -->
-            <div style="position:absolute; top:0; left:0; width:100%; height:75px; z-index:99; cursor:default;" title="Protected"></div>
-            <div style="position:absolute; bottom:80px; right:0; width:130px; height:80px; z-index:99; cursor:default;" title="Protected"></div>
             
-            ${v.id.length===11 ? `<div id="yt-player" style="width:100%; height:500px; background:black;"></div>` : `<img src="${v.image}" class="mock-player-img">`}
-            <div class="player-controls"><h2 class="display-text">${v.title}</h2></div>
+            <!-- Absolute Sandbox: Video Ignores ALL Physical Screen Taps -->
+            <div style="pointer-events: none; width:100%; height:500px; overflow:hidden; border-radius: var(--rounded-lg) var(--rounded-lg) 0 0; background:black;">
+                ${v.id.length===11 ? `<div id="yt-player" style="width:100%; height:100%;"></div>` : `<img src="${v.image}" class="mock-player-img" style="width:100%; height:100%; object-fit:cover;">`}
+            </div>
+            
+            <!-- Custom Application Layer Controls -->
+            <div class="player-controls" style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:1rem; padding: 1.5rem 2rem;">
+                <h2 class="display-text" style="margin:0; font-size:1.5rem; flex:1;">${v.title}</h2>
+                <button onclick="window.toggleKidVideo()" style="background:var(--primary); color:var(--on-primary); border:none; padding:1rem 2.5rem; border-radius:50px; font-size:1.4rem; font-weight:bold; cursor:pointer; box-shadow:0 4px 10px rgba(0,0,0,0.3); transition: transform 0.2s;">
+                    ▶ Play / ⏸ Pause
+                </button>
+            </div>
         </div>
     `;
+}
+
+window.toggleKidVideo = function() {
+    if (!player || typeof window.player.getPlayerState !== 'function') return;
+    let pState = window.player.getPlayerState();
+    if (pState === YT.PlayerState.PLAYING) {
+        window.player.pauseVideo();
+    } else {
+        window.player.playVideo();
+    }
 }
 
 window.render = function() {
