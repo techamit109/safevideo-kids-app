@@ -79,6 +79,12 @@ function onPlayerStateChange(event) {
         clearInterval(activeVideoTimer);
         activeVideoTimer = null;
     }
+    
+    // Safety Force-Eject: If the video ends completely, instantly return to the safe kid 
+    // menu so YouTube never has a chance to display its grid of related video links.
+    if (event.data == YT.PlayerState.ENDED) {
+        window.navigate('kid', 'kidHome');
+    }
 }
 
 // Global Usage Monitoring Loop
@@ -339,7 +345,11 @@ function renderKidPlayer() {
     setTimeout(() => { if (v.id.length === 11 && window.YT && window.YT.Player) { window.startKidPlayer(v.id); } }, 200);
     return `
         <button class="btn-back" onclick="navigate('kid','kidHome')" id="btn-back-home">⬅ Back to Home</button>
-        <div class="player-container">
+        <div class="player-container" style="position:relative; max-width: 900px; margin: 0 auto;">
+            <!-- Invisible click-intercept shields to block outbound links -->
+            <div style="position:absolute; top:0; left:0; width:100%; height:70px; z-index:99; cursor:default;" title="Protected"></div>
+            <div style="position:absolute; bottom:0; right:0; width:90px; height:60px; z-index:99; cursor:default;" title="Protected"></div>
+            
             ${v.id.length===11 ? `<div id="yt-player"></div>` : `<img src="${v.image}" class="mock-player-img">`}
             <div class="player-controls"><h2 class="display-text">${v.title}</h2></div>
         </div>
