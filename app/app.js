@@ -67,8 +67,14 @@ window.startKidPlayer = function(videoId) {
     });
 }
 
+const iconPlay = `<svg height="48" width="48" viewBox="0 0 36 36"><path fill="var(--on-surface)" d="M 12,26 26,18 12,10 z"></path></svg>`;
+const iconPause = `<svg height="48" width="48" viewBox="0 0 36 36"><path fill="var(--on-surface)" d="M 12,26 15,26 15,10 12,10 z M 21,26 24,26 24,10 21,10 z"></path></svg>`;
+
 function onPlayerStateChange(event) {
+    let btn = document.getElementById('btn-play-pause');
+    
     if (event.data == YT.PlayerState.PLAYING) {
+        if(btn) btn.innerHTML = iconPause;
         if(!activeVideoTimer) {
             activeVideoTimer = setInterval(() => {
                 let todayStr = new Date().toLocaleDateString();
@@ -85,6 +91,9 @@ function onPlayerStateChange(event) {
             }, 1000);
         }
     } else {
+        if(btn && (event.data == YT.PlayerState.PAUSED || event.data == YT.PlayerState.UNSTARTED || event.data == YT.PlayerState.CUED)) {
+            btn.innerHTML = iconPlay;
+        }
         clearInterval(activeVideoTimer);
         activeVideoTimer = null;
     }
@@ -365,23 +374,24 @@ function renderKidPlayer() {
             </div>
             
             <!-- Custom Application Layer Controls -->
-            <div class="player-controls" style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:1rem; padding: 1.5rem 2rem;">
-                <h2 class="display-text" style="margin:0; font-size:1.5rem; flex:1;">${v.title}</h2>
-                <button onclick="window.toggleKidVideo()" style="background:var(--primary); color:var(--on-primary); border:none; padding:1rem 2.5rem; border-radius:50px; font-size:1.4rem; font-weight:bold; cursor:pointer; box-shadow:0 4px 10px rgba(0,0,0,0.3); transition: transform 0.2s;">
-                    ▶ Play / ⏸ Pause
+            <div class="player-controls" style="display:flex; justify-content:flex-start; align-items:center; gap:1.5rem; padding: 1.5rem 2rem;">
+                <button id="btn-play-pause" onclick="window.toggleKidVideo()" style="background:transparent; border:none; padding:0; display:flex; align-items:center; justify-content:center; cursor:pointer; transition: transform 0.2s;" title="Play / Pause">
+                    ${iconPlay}
                 </button>
+                <h2 class="display-text" style="margin:0; font-size:1.5rem; flex:1; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">${v.title}</h2>
             </div>
         </div>
     `;
 }
 
 window.toggleKidVideo = function() {
-    if (!player || typeof window.player.getPlayerState !== 'function') return;
-    let pState = window.player.getPlayerState();
+    // Fixed: References global player properly instead of strict window scope
+    if (!player || typeof player.getPlayerState !== 'function') return;
+    let pState = player.getPlayerState();
     if (pState === YT.PlayerState.PLAYING) {
-        window.player.pauseVideo();
+        player.pauseVideo();
     } else {
-        window.player.playVideo();
+        player.playVideo();
     }
 }
 
