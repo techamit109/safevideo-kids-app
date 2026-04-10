@@ -1,3 +1,7 @@
+A quick demo on youtube of the app can be seen here
+https://youtu.be/WtFMfczvWEQ?feature=shared
+
+
 I've built the SafeVideo app, a dual-mode parental control and video browsing application designed with the "Guided Sanctuary" design philosophy.
 Key Features:
 Admin Dashboard: A comprehensive management interface with active profile summaries, watch time analytics, and content library management.
